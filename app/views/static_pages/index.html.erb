@@ -1,10 +1,10 @@
 <%= form_with url: "/static_page", method: :get do |form| %>
   <%= form.label :flickr_id, "Flickr User:" %>
-  <%= form.text_field :flickr_id %>
+  <%= form.text_field :flickr_id, placeholder: "195409774@N04" %>
   <%= form.submit "Search" %>
 <% end %>
 
 
 <% @pictures.each do |picture| %>
-  <%= picture %>
+  <%= image_tag "https://live.staticflickr.com/#{picture[server]}/#{picture[id]}_#{picture[secret]}.jpg" %>
 <% end %>
