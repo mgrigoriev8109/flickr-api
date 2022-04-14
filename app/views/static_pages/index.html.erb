@@ -1,0 +1,10 @@
+<%= form_with url: "/static_page", method: :get do |form| %>
+  <%= form.label :flickr_id, "Flickr User:" %>
+  <%= form.text_field :flickr_id %>
+  <%= form.submit "Search" %>
+<% end %>
+
+
+<% @pictures.each do |picture| %>
+  <%= picture %>
+<% end %>
